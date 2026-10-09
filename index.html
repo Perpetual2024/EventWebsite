@@ -7,100 +7,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="global-navbar"></div>
     <nav>
         <img src="image.png" alt="MKU LOGO" width="50" height="50">
-      <h1 style="margin-left: auto; margin-right: auto;">MKU Freshers Night</h1>
+      <h1 style="margin-left: auto; margin-right: auto;">MKU FRESHER'S NIGHT</h1>
       
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#tickets">Tickets</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="Ticket.html">Tickets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
       </ul>
     </nav>
-    <h1>MOUNT KENYA UNIVERSITY PRESENTS</h1>
+    <h1 style="margin-top: 50px;">MOUNT KENYA UNIVERSITY PRESENTS</h1>
     <section id="home">
       <div>
         
         <h1>Freshers Night 2026</h1>
-        <p>Meet new friends, enjoy music, and make your first campus memories!</p>
+        <p style="font-size: 25px">Meet new friends, enjoy music, and make your first campus memories!</p>
         <p><strong>Friday, 20 November 2026 · 6:00 PM</strong></p>
-        <a class="button" href="#tickets" role="button">Get Your Ticket</a>
+        <a class="button" href="Ticket.html" role="button" style="color: blue; font-size: 25px;">Get Your Ticket</a>
         <p class="countdown" id="countdown">Loading countdown...</p>
       </div>
     </section>
     
-
-    <section id="about">
-      <hr><h1>About the Event</h1> <hr>
-      <p style="width: 580px; margin-left: auto; margin-right: auto; font-size: 22px;">Welcome to MKU Freshers Night! This exciting event is designed to help new students settle into campus life, meet new friends, 
-        and feel part of the vibrant Mount Kenya University community. It is a special evening filled with music, 
-        performances, laughter, and unforgettable memories as students come together to celebrate the beginning of a 
-        new academic journey. Whether you are meeting classmates for the first time or simply looking for a fun and welcoming
-        place to be, this event offers the perfect opportunity to connect, enjoy great entertainment, and create lasting experiences. 
-        Come with your friends, enjoy the atmosphere, and make the most of this exciting night.
-      </p>
-    </section> 
-
-    <section id="schedule">
-     <hr> <h1>Event Schedule</h1> <hr>
-      <div class="simple-list">
-        <p><strong>6:00 PM</strong> — Arrival and registration</p>
-        <p><strong>6:30 PM</strong> — Welcome remarks</p>
-        <p><strong>7:00 PM</strong> — Music and performances</p>
-        <p><strong>8:30 PM</strong> — Guest session and games</p>
-        <p><strong>9:30 PM</strong> — DJ session</p>
-        <p><strong>11:00 PM</strong> — Event ends</p>
-      </div>
-    </section>
-    
-
-    <section id="tickets">
-      <hr><h1>Buy Your Ticket</h1><hr>
-      <p>Choose your ticket and fill in your details. This demo form does not process real payments.</p>
-      <form id="ticket-form">
-        <label for="full-name"><strong>Full name</strong></label>
-        <input type="text" id="full-name" required placeholder="Enter your full name">
-
-        <label for="email"><strong>Email address</strong></label>
-        <input type="email" id="email" required placeholder="you@example.com">
-        
-        <input type="radio" value="MALE" name="gender" id="male" required>
-        <label for="male">Male</label>
-        <input type="radio" value="FEMALE" name="gender" id="female" required>
-        <label for="female">Female</label>
-
-        <label for="ticket-type"><strong>Ticket type</strong></label>
-        <select id="ticket-type" required>
-          <option value="500">Regular — KSh 500</option>
-          <option value="1000">VIP — KSh 1,000</option>
-        </select>
-
-        <label for="quantity"><strong>Number of tickets</strong></label>
-        <input type="number" id="quantity" min="1" max="10" value="1" required>
-
-        <p class="total">Total: KSh <span id="total-price">500</span></p>
-        <button type="submit" class="button">Reserve Ticket</button>
-        <p id="form-message" role="status"></p>
-      </form>
-    </section> 
-
-    <section id="contact">
-      <h1>Venue</h1>
-      <p><strong>Mount Kenya University, Thika Campus</strong></p>
-      <p>The exact event area will be announced by the organisers. Please check campus notices before attending.</p>
-      <div> <h1>MKU Thika Campus</h1></div>
-
-      <hr><h1>Contact</h1><hr>
-      <p>Email: freshersnight@mku.ac.ke</p>
-      <p>Phone: +254 700 000 000</p>
-    </section> <hr style="width:100%; color: rgb(0, 255, 200); height: 2px;">
+     
+   <hr style="width:100%; color: rgb(0, 255, 200); height: 2px;">
     <footer>
     <p>© 2026 MKU Freshers Night · Student event website project</p>
     <p>All rights reserved.</p>
     <p>#MKUFreshersNight</p>
 </footer>
+<script src="script.js"></script>
 </body>
 
 </html>
