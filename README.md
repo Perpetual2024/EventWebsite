@@ -10,7 +10,7 @@ This Website advertises an upcomming event in a given institution.
  5. Registration Form
  6. Venue
  7. FAQ Section
- 8. Countdown Timer
+ 8. Countdown Timer/event time option
  9. Gallery
  10. Responsive Navigation
  11. Contact
