@@ -17,8 +17,8 @@
 }
         
 nav {
-    background-color: #333;
-    color: #fff;
+    background-color: white;
+    
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -35,11 +35,7 @@ nav {
     box-sizing: border-box;
     z-index: 1000;
 }
-a {
-    color: #ffffff;
-    text-decoration: none;
 
-}
 .button {
     position: absolute;
     bottom: 20px;
@@ -57,8 +53,6 @@ a {
     font-weight: bold;
     cursor: pointer;
 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: 0.3s ease;
 }
 .button:hover {
     background-color: #9900e0;
@@ -68,7 +62,7 @@ a {
 li {
     display: inline-block;
     margin-right: 15px;
-    color: #ffffff;
+    color: black;
     text-decoration: none;
 }
        
@@ -87,13 +81,20 @@ li {
           text-align: center;
           
         }
-        h1,h2,h3,p,label,select,button {
+        h3{
+            text-align: center;
+            font-size: 40px;
+            color:white;
+        }
+
+        h1,h2,p,label,select,button {
           
           text-align: center;
           margin-bottom: 10px;
           margin-top: 10px;
           margin-left: auto;
           margin-right: auto;
+          
           
           
         }
