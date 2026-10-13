@@ -35,8 +35,37 @@ nav {
     box-sizing: border-box;
     z-index: 1000;
 }
+a {
+    color: #ffffff;
+    text-decoration: none;
 
-li, a {
+}
+.button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #ff8c00;
+    color: white;
+
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease;
+}
+.button:hover {
+    background-color: #9900e0;
+    box-shadow: 0 6px 100px rgba(153, 0, 224, 0.5);
+}
+
+li {
     display: inline-block;
     margin-right: 15px;
     color: #ffffff;
@@ -58,7 +87,7 @@ li, a {
           text-align: center;
           
         }
-        h1,h2,p,label,select,button {
+        h1,h2,h3,p,label,select,button {
           
           text-align: center;
           margin-bottom: 10px;
