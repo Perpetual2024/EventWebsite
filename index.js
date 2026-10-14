@@ -54,4 +54,18 @@ function updateTotal(){
 ticketType.addEventListener('change', updateTotal);
 quantity.addEventListener('input', updateTotal);
 
+ticketForm.addEventListener('submit', function(event){
+    event.preventDefault();
+
+    const fullName = document.getElementById("full-name").value.trim();
+
+    const email = document.getElementById("email").value.trim();
+
+    const category = studentCategory.value;
+    const selectedTicket = ticketType.options[ticketType.selectedIndex].text;
+
+    const numberOfTickets = Number(quantity.value);
+    const total = Number(ticketType.value) * numberOfTickets
+})
+
 
