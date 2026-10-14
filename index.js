@@ -46,13 +46,16 @@ studentCategory.addEventListener("change", function (){
 // calculating total price
 
 function updateTotal(){
+
     const price = Number(ticketType.value);
     const numberOfTickets = Number(quantity.value);
 
-    totalPrice.textContext = price * numberOfTickets;
+    totalPrice.textContent = price * numberOfTickets;
 }
-ticketType.addEventListener('change', updateTotal);
-quantity.addEventListener('input', updateTotal);
+
+ticketType.addEventListener("change", updateTotal);
+
+quantity.addEventListener("input", updateTotal);
 
 ticketForm.addEventListener('submit', function(event){
     event.preventDefault();
@@ -65,7 +68,22 @@ ticketForm.addEventListener('submit', function(event){
     const selectedTicket = ticketType.options[ticketType.selectedIndex].text;
 
     const numberOfTickets = Number(quantity.value);
-    const total = Number(ticketType.value) * numberOfTickets
-})
+    const total = Number(ticketType.value) * numberOfTickets;
+
+    let registrationDetails = "";
+    if (category === "regular"){
+         registrationDetails =  `Registration Number : ${registrationNumber.value.trim()}`;
+    }
+
+    alert(
+        `Thank you, ${fullName}! Your reservation has been recorded.\n\n` +
+        `Ticket: ${selectedTicket}\n` +
+        `Quantity: ${numberOfTickets}\n` +
+        `Total: KSh ${total.toLocaleString("en-KE")}\n` +
+        `Confirmation email: ${email}` +
+    registrationDetails
+    );
+
+});
 
 
