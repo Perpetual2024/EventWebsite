@@ -1,14 +1,10 @@
  body {     
-            
-            margin: 0;
-            background-color: beige;
-            
-                  
-            
+         margin: 0;
+         padding: 0;    
  }
 #home {
     padding: 20px;
-    margin-top: 90px; 
+    margin-top: 80px; 
     background-image: url("assets/Home.jpg");
     background-size: cover; 
     background-position: center;
@@ -17,7 +13,7 @@
 }
         
 nav {
-    background-color: white;
+    background-color: beige;
     
     padding: 10px 20px;
     display: flex;

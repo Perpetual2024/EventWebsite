@@ -1,0 +1,71 @@
+/* Keep elements with the hidden attribute invisible */
+[hidden] {
+    display: none !important;
+}
+
+/* Style the registration and ticket sections */
+#registration-section,
+#ticket-section {
+    padding: 20px;
+    margin: 15px 0;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+/* Style the form */
+#ticket-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 25px;
+}
+
+/* Style labels */
+#ticket-form label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: bold;
+}
+
+/* Style inputs and dropdowns */
+#ticket-form input,
+#ticket-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style the submit button */
+.submit {
+    display: block;
+    margin: 25px auto 0;
+    padding: 12px 28px;
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.submit:hover {
+    background-color: #e67600;
+}
+
+/* Total price */
+.total {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Form response message */
+#form-message {
+    text-align: center;
+    margin-top: 15px;
+}
