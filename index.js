@@ -43,3 +43,15 @@ studentCategory.addEventListener("change", function (){
     updateTotal();
 
 });
+// calculating total price
+
+function updateTotal(){
+    const price = Number(ticketType.value);
+    const numberOfTickets = Number(quantity.value);
+
+    totalPrice.textContext = price * numberOfTickets;
+}
+ticketType.addEventListener('change', updateTotal);
+quantity.addEventListener('input', updateTotal);
+
+
