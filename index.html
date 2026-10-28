@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MKU EVENTS</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MKU Freshers Night 2026</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div id="global-navbar"></div>
-    <nav>
-        <img src="image.png" alt="MKU LOGO" width="50" height="50">
-      <h1 style="margin-left: auto; margin-right: auto;">MKU EVENTS</h1>
-      
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="Ticket.html">Tickets</a></li>
-        <li><a href="contact.html">Contact</a></li>
-
-      </ul>
-    </nav>
-    <h1 style="margin-top: 50px;">TODAY'S LINEUP</h1>
-    <section id="home">
-    
-        
-        <h1 style="color: orange; font-family:Verdana, Geneva, Tahoma, sans-serif;">FRESHERS NIGHT 2026</h1>
-        <h3>Meet new friends, enjoy music, and make your first campus memories!</h3>
-        <h2><strong>Friday, 20 November 2026</strong></h2>
-        <h2>FROM 8PM TILL DAWN</h2>
-        <p>Venue: MKCC grounds</p>
-        <a class="button" href="Ticket.html">Get Your Ticket</a>
-        <p class="countdown" id="countdown">Loading countdown...</p>
-      
+  <nav>
+    <a class="brand" href="index.html">MKU Freshers Night</a>
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Ticket.html">Tickets</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="home" class="hero">
+      <p class="eyebrow">FRIDAY, 20 NOVEMBER 2026 · 8 PM TILL DAWN</p>
+      <h1>Freshers Night 2026</h1>
+      <p class="hero-copy">Meet new friends, enjoy the music, and make your first campus memories.</p>
+      <p class="venue">MKCC Grounds, next to MKU Library</p>
+      <a class="button" href="Ticket.html">Get your ticket</a>
+      <div class="countdown-card">
+        <p class="countdown-label">Countdown to the event</p>
+        <p class="countdown" id="countdown" role="timer" aria-live="polite">Starting countdown…</p>
+      </div>
     </section>
-     
 
-    <section>
-        <h2>Event Details</h2>
-        <p>This event will be hosted at MKCC grounds next to Mku Library from 8pm till Dawn </p><br>
-        <p>Students from other campus are invited with a ticket gate pass that is available after purchasing the ticket</p>
-        <p>Regular students also need there registration cards and ticket to be allowed in the grounds</p>
-
+    <section class="content-section">
+      <p class="eyebrow">WHAT TO EXPECT</p>
+      <h2>A night to make campus memories</h2>
+      <p>Join fellow students for an evening of music, performances, and new connections at MKCC Grounds.</p>
+      <div class="details-grid">
+        <article class="detail-card">
+          <h3>For MKU students</h3>
+          <p>Regular campus students should bring their registration cards for entry.</p>
+        </article>
+        <article class="detail-card">
+          <h3>Visiting students</h3>
+          <p>Students from other campuses are welcome with a purchased ticket.</p>
+        </article>
+      </div>
     </section>
-    
-     
-   <hr style="width:100%; color: rgb(0, 255, 200); height: 2px;">
-    <footer>
-    <p>© 2026 MKU Freshers Night · Student event website project</p>
-    <p>All rights reserved.</p>
-    <p>#MKUFreshersNight</p>
-</footer>
+  </main>
+  <footer>
+    <p>© 2026 MKU Freshers Night · #MKUFreshersNight</p>
+  </footer>
+  <script src="index.js"></script>
 </body>
 
 </html>

@@ -3,100 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tickets | MKU Freshers Night</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="ticket.css">
 </head>
 <body>
-    <div id="global-navbar"></div>
-    <section id="tickets">
-      <hr><h1>Reserve Your Ticket</h1><hr>
-      <p> This demo form does not process real payments.</p>
-      <form id="ticket-form">
+    <nav>
+        <a class="brand" href="index.html">MKU Freshers Night</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Ticket.html" aria-current="page">Tickets</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="content-section page-section" id="tickets">
+            <p class="eyebrow">JOIN US ON 20 NOVEMBER</p>
+            <h1>Reserve your ticket</h1>
+            <p>This demo form does not process real payments.</p>
+            <form id="ticket-form">
+                <label for="full-name">Full name</label>
+                <input type="text" id="full-name" required autocomplete="name" placeholder="Enter your full name">
 
-    <label for="full-name"><strong>Full name</strong></label>
-    <input type="text" id="full-name" required
-           placeholder="Enter your full name">
+                <label for="email">Email address</label>
+                <input type="email" id="email" required autocomplete="email" placeholder="you@example.com">
 
-    <label for="email"><strong>Email address</strong></label>
-    <input type="email" id="email" required
-           placeholder="you@example.com">
+                <label for="student-category">Student category</label>
+                <select id="student-category" required>
+                    <option value="">Select your category</option>
+                    <option value="regular">Regular campus student</option>
+                    <option value="other">Student from another campus</option>
+                </select>
 
-    <!-- Student category -->
-    <label for="student-category">
-        <strong>Student Category</strong>
-    </label>
+                <div id="registration-section" hidden>
+                    <label for="registration-number">School registration number</label>
+                    <input type="text" id="registration-number" placeholder="Enter your registration number">
+                </div>
 
-    <select id="student-category" required>
-        <option value="">Select your category</option>
-        <option value="regular">Regular Campus Student</option>
-        <option value="other">Student from Another Campus</option>
-    </select>
+                <div id="ticket-section" hidden>
+                    <label for="ticket-type">Choose your ticket</label>
+                    <select id="ticket-type" required></select>
 
+                    <label for="quantity">Number of tickets</label>
+                    <input type="number" id="quantity" min="1" max="10" value="1" required>
 
-    <!-- Registration number for regular students -->
-    <div id="registration-section" hidden>
-        <label for="registration-number">
-            <strong>School Registration Number</strong>
-        </label>
+                    <p class="total">Total: KSh <span id="total-price">0</span></p>
+                </div>
 
-        <input type="text" id="registration-number"
-               placeholder="Enter your registration number">
-    </div>
-    <!-- Ticket section -->
-<div id="ticket-section" hidden>
-
-    <label for="ticket-type">Choose your ticket:</label>
-
-    <select id="ticket-type" required>
-        <!-- JavaScript adds ticket options here -->
-    </select>
-
-    <label for="quantity">Quantity:</label>
-    <input
-        type="number"
-        id="quantity"
-        min="1"
-        max="10"
-        value="1"
-        required
-    >
-
-    <p>Total: KSh <span id="total-price">0</span></p>
-
-</div>
-
-    <!-- Ticket selection for students from other campuses -->
-    <div id="ticket-section" hidden>
-    <label for="ticket-type">
-        <strong>Ticket Type</strong>
-    </label>
-
-    <select id="ticket-type" required>
-        <option value="0">Regular — Free</option>
-        <option value="1000">VIP — KSh 1,000</option>
-    </select>
-
-    <label for="quantity">
-        <strong>Number of Tickets</strong>
-    </label>
-
-    <input type="number" id="quantity"
-           min="1" max="10" value="1" required>
-
-    <p class="total">
-        Total: KSh <span id="total-price">0</span>
-    </p>
-
-    </div>
-
-    <button type="submit" class="submit">
-        Reserve Ticket
-    </button>
-
-    <p id="form-message" role="status"></p>
-
-</form>
-    </section>
+                <button type="submit" class="submit">Reserve ticket</button>
+                <p id="form-message" role="status"></p>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 MKU Freshers Night · #MKUFreshersNight</p>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>

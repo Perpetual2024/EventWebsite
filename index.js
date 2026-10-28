@@ -1,89 +1,101 @@
-const ticketForm = document.getElementById("ticket-form");
-const studentCategory = document.getElementById("student-category");
-const registrationSection = document.getElementById("registration-section");
-const registrationNumber = document.getElementById("registration-number");
-const ticketSection = document.getElementById("ticket-section");
-const ticketType = document.getElementById("ticket-type");
-const quantity = document.getElementById("quantity");
-const totalPrice = document.getElementById("total-price");
-const formMessage = document.getElementById("form-message");
+const countdown = document.getElementById("countdown");
 
-studentCategory.addEventListener("change", function (){
-    const category = studentCategory.value;
+if (countdown) {
+    const eventDate = new Date(2026, 10, 20, 20, 0, 0);
 
-    registrationSection.hidden = category !== "regular";
-    registrationNumber.required = category === "regular";
+    function updateCountdown() {
+        const remaining = eventDate.getTime() - Date.now();
 
-    // Show ticket options after a category is selected
-    ticketSection.hidden = category === "";
+        if (remaining <= 0) {
+            countdown.textContent = "The event is underway!";
+            return false;
+        }
 
-    formMessage.textContent = "";
+        const days = Math.floor(remaining / 864000000);
+        const hours = Math.floor((remaining % 86400000) / 3600000);
+        const minutes = Math.floor((remaining % 3600000) / 60000);
+        const seconds = Math.floor((remaining % 60000) / 1000);
 
-    // Set ticket options for each category
-    if (category === "regular") {
-
-        ticketType.innerHTML = `
-            <option value="0">Regular — Free</option>
-            <option value="1000">VIP — KSh 1,000</option>
-        `;
-
-    } else if (category === "other") {
-
-        ticketType.innerHTML = `
-            <option value="500">Regular — KSh 500</option>
-            <option value="1000">VIP — KSh 1,000</option>
-        `;
-
-    } else {
-
-        ticketType.innerHTML = "";
-
+        countdown.textContent = `${days} days · ${hours} hours · ${minutes} minutes · ${seconds} seconds`;
+        return true;
     }
 
-    updateTotal();
-
-});
-// calculating total price
-
-function updateTotal(){
-
-    const price = Number(ticketType.value);
-    const numberOfTickets = Number(quantity.value);
-
-    totalPrice.textContent = price * numberOfTickets;
+    if (updateCountdown()) {
+        const countdownInterval = window.setInterval(() => {
+            if (!updateCountdown()) {
+                window.clearInterval(countdownInterval);
+            }
+        }, 1000);
+    }
 }
 
-ticketType.addEventListener("change", updateTotal);
+const ticketForm = document.getElementById("ticket-form");
 
-quantity.addEventListener("input", updateTotal);
+if (ticketForm) {
+    const studentCategory = document.getElementById("student-category");
+    const registrationSection = document.getElementById("registration-section");
+    const registrationNumber = document.getElementById("registration-number");
+    const ticketSection = document.getElementById("ticket-section");
+    const ticketType = document.getElementById("ticket-type");
+    const quantity = document.getElementById("quantity");
+    const totalPrice = document.getElementById("total-price");
+    const formMessage = document.getElementById("form-message");
 
-ticketForm.addEventListener('submit', function(event){
-    event.preventDefault();
+    function updateTotal() {
+        const price = Number(ticketType.value);
+        const numberOfTickets = Number(quantity.value);
 
-    const fullName = document.getElementById("full-name").value.trim();
-
-    const email = document.getElementById("email").value.trim();
-
-    const category = studentCategory.value;
-    const selectedTicket = ticketType.options[ticketType.selectedIndex].text;
-
-    const numberOfTickets = Number(quantity.value);
-    const total = Number(ticketType.value) * numberOfTickets;
-
-    let registrationDetails = "";
-    if (category === "regular"){
-         registrationDetails =  `Registration Number : ${registrationNumber.value.trim()}`;
+        totalPrice.textContent = (price * numberOfTickets).toLocaleString("en-KE");
     }
 
-    alert(
-        `Thank you, ${fullName}! Your reservation has been recorded.\n\n` +
-        `Ticket: ${selectedTicket}\n` +
-        `Quantity: ${numberOfTickets}\n` +
-        `Total: KSh ${total.toLocaleString("en-KE")}\n` +
-        `Confirmation email: ${email}` +
-    registrationDetails
-    );
+    studentCategory.addEventListener("change", function () {
+        const category = studentCategory.value;
 
-});
+        registrationSection.hidden = category !== "regular";
+        registrationNumber.required = category === "regular";
+        ticketSection.hidden = category === "";
+        formMessage.textContent = "";
 
+        if (category === "regular") {
+            ticketType.innerHTML = `
+                <option value="0">Regular — Free</option>
+                <option value="1000">VIP — KSh 1,000</option>
+            `;
+        } else if (category === "other") {
+            ticketType.innerHTML = `
+                <option value="500">Regular — KSh 500</option>
+                <option value="1000">VIP — KSh 1,000</option>
+            `;
+        } else {
+            ticketType.innerHTML = "";
+        }
 
+        updateTotal();
+    });
+
+    ticketType.addEventListener("change", updateTotal);
+    quantity.addEventListener("input", updateTotal);
+
+    ticketForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const fullName = document.getElementById("full-name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const category = studentCategory.value;
+        const selectedTicket = ticketType.options[ticketType.selectedIndex].text;
+        const numberOfTickets = Number(quantity.value);
+        const total = Number(ticketType.value) * numberOfTickets;
+        const registrationDetails = category === "regular"
+            ? `\nRegistration Number: ${registrationNumber.value.trim()}`
+            : "";
+
+        window.alert(
+            `Thank you, ${fullName}! Your reservation has been recorded.\n\n` +
+            `Ticket: ${selectedTicket}\n` +
+            `Quantity: ${numberOfTickets}\n` +
+            `Total: KSh ${total.toLocaleString("en-KE")}\n` +
+            `Confirmation email: ${email}` +
+            registrationDetails
+        );
+    });
+}

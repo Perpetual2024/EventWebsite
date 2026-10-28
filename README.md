@@ -21,4 +21,14 @@ This Website advertises an upcomming event in a given institution.
 * JavaScript
 
 ## Authors
+1. perpetual akinyi
+2. Asukulu shabani
+3. Abdiaziz Adan sirat
+4. Lorene chemutai
+5. Zipporah chege
+6. David Kimani
+7. Sarah Kimani
+8. Verahmoraa
+9. Lynn
+10. up up and away
  
