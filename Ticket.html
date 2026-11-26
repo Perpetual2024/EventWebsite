@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="ticket.css">
 </head>
+
 <body>
     <nav>
         <a class="brand" href="index.html">MKU Freshers Night</a>
@@ -22,15 +24,19 @@
             <p class="eyebrow">JOIN US ON 20 NOVEMBER</p>
             <h1>Reserve your ticket</h1>
             <p>This demo form does not process real payments.</p>
-            <form id="ticket-form">
+            <form id="ticket-form" action="submit-ticket.php" method="post">
+                <input type="hidden" id="csrf-token" name="csrf_token">
+                <input type="hidden" id="submission-token" name="submission_token">
+
                 <label for="full-name">Full name</label>
-                <input type="text" id="full-name" required autocomplete="name" placeholder="Enter your full name">
+                <input type="text" id="full-name" name="full_name" required autocomplete="name"
+                    placeholder="Enter your full name">
 
                 <label for="email">Email address</label>
-                <input type="email" id="email" required autocomplete="email" placeholder="you@example.com">
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
 
                 <label for="student-category">Student category</label>
-                <select id="student-category" required>
+                <select id="student-category" name="student_category" required>
                     <option value="">Select your category</option>
                     <option value="regular">Regular campus student</option>
                     <option value="other">Student from another campus</option>
@@ -38,15 +44,16 @@
 
                 <div id="registration-section" hidden>
                     <label for="registration-number">School registration number</label>
-                    <input type="text" id="registration-number" placeholder="Enter your registration number">
+                    <input type="text" id="registration-number" name="registration_number"
+                        placeholder="Enter your registration number">
                 </div>
 
                 <div id="ticket-section" hidden>
                     <label for="ticket-type">Choose your ticket</label>
-                    <select id="ticket-type" required></select>
+                    <select id="ticket-type" name="ticket_type" required></select>
 
                     <label for="quantity">Number of tickets</label>
-                    <input type="number" id="quantity" min="1" max="10" value="1" required>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
 
                     <p class="total">Total: KSh <span id="total-price">0</span></p>
                 </div>
@@ -61,4 +68,5 @@
     </footer>
     <script src="index.js"></script>
 </body>
+
 </html>
